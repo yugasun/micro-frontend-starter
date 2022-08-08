@@ -1,0 +1,5 @@
+node_modules/
+dist/
+index.html
+
+public/mockServiceWorker.js

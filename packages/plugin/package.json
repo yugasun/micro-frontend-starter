@@ -1,0 +1,25 @@
+{
+  "name": "@micro-fe/vite-plugin",
+  "version": "0.0.1",
+  "description": "Qiankun plugin for vite",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "vite build"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "vite-plugin",
+    "qiankun",
+    "vite"
+  ],
+  "author": "yugasun",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "1.0.0-rc.12",
+    "node-html-parser": "^5.3.3"
+  }
+}
