@@ -1,5 +1,8 @@
 # Micro Frontend Starter
 
+<a href="https://github.com/yugasun/micro-frontend-starter/actions/workflows/ci.yml"><img src="https://github.com/yugasun/micro-frontend-starter/actions/workflows/ci.yml/badge.svg?branch=main" alt="build status"></a>
+<br/>
+
 ## Feature
 
 -   [x] Micro Framework using [qiankun](https://qiankun.umijs.org/) 🔥
