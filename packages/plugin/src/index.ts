@@ -26,19 +26,6 @@ const createQiankunHelper = (qiankunName: string) => `
   })(window);
 `;
 
-// eslint-disable-next-line no-unused-vars
-// const replaceSomeScript = (
-//     $: CheerioAPI,
-//     findStr: string,
-//     replaceStr: string = '',
-// ) => {
-//     $('script').each((i, el) => {
-//         if ($(el).html()?.includes(findStr)) {
-//             $(el).html(replaceStr);
-//         }
-//     });
-// };
-
 const createImportFinallyResolve = (qiankunName: string) => {
     return `
     const qiankunLifeCycle = window.moudleQiankunAppLifeCycles && window.moudleQiankunAppLifeCycles['${qiankunName}'];
@@ -59,10 +46,11 @@ type PluginFn = (
     microOption?: MicroOption,
 ) => PluginOption;
 
-const htmlPlugin: PluginFn = (qiankunName, microOption = {}) => {
+const plugin: PluginFn = (qiankunName, microOption = {}) => {
     let isProduction: boolean;
     let base = '';
 
+    // dynamic import module
     const module2DynamicImport = ($: CheerioAPI, scriptTag?: Element) => {
         if (!scriptTag) {
             return;
@@ -81,7 +69,7 @@ const htmlPlugin: PluginFn = (qiankunName, microOption = {}) => {
     };
 
     return {
-        name: 'vite-plugin-qiankun',
+        name: '@micro-fe/vite-plugin',
         configResolved(config) {
             isProduction = config.command === 'build' || config.isProduction;
             base = config.base;
@@ -143,4 +131,4 @@ const htmlPlugin: PluginFn = (qiankunName, microOption = {}) => {
     };
 };
 
-export default htmlPlugin;
+export default plugin;
