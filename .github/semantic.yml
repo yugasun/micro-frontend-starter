@@ -1,0 +1,18 @@
+titleOnly: true
+types:
+    - feat
+    - bug
+    - fix
+    - ui
+    - docs
+    - style
+    - perf
+    - release
+    - deploy
+    - refactor
+    - test
+    - chore
+    - revert
+    - merge
+    - build
+    - ci

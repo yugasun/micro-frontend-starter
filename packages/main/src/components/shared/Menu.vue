@@ -20,7 +20,7 @@ const appList = ref<IMicroApp[]>(window.__MICRO_APPS__ || []);
         :router="true"
     >
         <el-menu-item index="/" name="home">
-            <el-icon><icon-menu /></el-icon>
+            <el-icon><HomeFilled /></el-icon>
             <span>Home</span>
         </el-menu-item>
         <el-menu-item

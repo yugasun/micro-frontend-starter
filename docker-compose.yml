@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+    nginx:
+        image: micro-frontend-starter:latest
+        container_name: micro-frontend-starter
+        restart: always
+        ports:
+            - 8000:8000
+            - 8001:8001
+            - 8002:8002
+            - 8003:8003
+        volumes:
+            - ./dist:/opt/www
+            - ./docker/nginx.conf:/etc/nginx/nginx.conf
+            - ./docker/conf.d:/etc/nginx/conf.d

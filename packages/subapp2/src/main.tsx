@@ -20,7 +20,6 @@ interface MountProps {
 let app: Root | null = null;
 function render(props: MountProps = {}) {
     const { container } = props;
-    console.log('render react', container);
 
     const target: HTMLElement = container
         ? container.querySelector('#app')
@@ -58,7 +57,7 @@ renderWithQiankun({
     mount(props: MountProps) {
         console.log('[react] props from main framework', props);
         render(props);
-        // storeTest(props);
+        storeTest(props);
     },
     update: function (props: QiankunProps): void | Promise<void> {
         throw new Error('Function not implemented.');

@@ -1,5 +1,5 @@
 {
-  "name": "micro-frontend-starter__subapp2",
+  "name": "subapp2",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",

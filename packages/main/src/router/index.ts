@@ -1,4 +1,4 @@
-import { getToken } from '@/utils/token';
+// import { getToken } from '@/utils/token';
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [

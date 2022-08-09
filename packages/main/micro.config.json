@@ -4,7 +4,7 @@
           "name": "subapp1",
           "type": "vue",
           "devEntry": "http://localhost:8001",
-          "entry": "https://subapp1.sls.plus",
+          "entry": "http://localhost:8001",
           "container": "#subapp-container",
           "activeRule": "/subapp1/"
       },
@@ -12,7 +12,7 @@
           "name": "subapp2",
           "type": "react",
           "devEntry": "http://localhost:8002",
-          "entry": "https://subapp2.sls.plus",
+          "entry": "http://localhost:8002",
           "container": "#subapp-container",
           "activeRule": "/subapp2/"
       },
@@ -20,7 +20,7 @@
           "name": "subapp3",
           "type": "svelte",
           "devEntry": "http://localhost:8003",
-          "entry": "https://subapp3.sls.plus",
+          "entry": "http://localhost:8003",
           "container": "#subapp-container",
           "activeRule": "/subapp3/"
       }

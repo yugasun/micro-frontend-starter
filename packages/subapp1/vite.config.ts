@@ -3,16 +3,24 @@ import { resolve } from 'path';
 import vue from '@vitejs/plugin-vue';
 import MicroVitePlugin from '@micro-fe/vite-plugin';
 
+// TODO: change to real deploy domain
+const DEPLOY_URL = 'http://localhost:8001';
 const VITE_APP_NAME = 'subapp1';
 const DEV_HOST = 'localhost';
 const DEV_PORT = 8001;
 const isProd = process.env.NODE_ENV === 'production';
 const isMicro = process.env.VITE_MICRO_MODE === 'true';
-console.log('isMicro', isMicro);
+
+let base = '/';
+if (isProd) {
+    base = DEPLOY_URL;
+} else if (isMicro) {
+    base = `/${VITE_APP_NAME}/`;
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: isMicro ? `/${VITE_APP_NAME}/` : '/',
+    base,
     resolve: {
         alias: {
             '@': resolve(__dirname, 'src'),
@@ -24,7 +32,9 @@ export default defineConfig({
             useDevMode: !isProd,
         }),
     ],
-    build: {},
+    build: {
+        minify: false,
+    },
     server: {
         cors: true,
         headers: {

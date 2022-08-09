@@ -14,7 +14,7 @@ function goBack() {
 <template>
     <h1 class="title">This is Detail Page, need login</h1>
     <p class="user-info">Wellcome, {{ userStore.userInfo?.username }}</p>
-    <!-- <el-button @click="goBack">Back</el-button> -->
+    <el-button @click="goBack">Back</el-button>
 </template>
 
 <style lang="scss" scoped>

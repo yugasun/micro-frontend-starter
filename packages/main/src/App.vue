@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { useTimeAgo } from '@vueuse/core';
 import Header from '@/components/shared/Header.vue';
 import Footer from '@/components/shared/Footer.vue';
 import Menu from '@/components/shared/Menu.vue';

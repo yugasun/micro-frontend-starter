@@ -15,7 +15,6 @@ interface MountProps {
 let app: SvelteComponent | null = null;
 function render(props: MountProps = {}) {
     const { container } = props;
-    console.log('render svelte', container);
 
     const target: HTMLElement = container
         ? container.querySelector('#app')
@@ -56,9 +55,10 @@ renderWithQiankun({
     mount(props: MountProps) {
         console.log('[react] props from main framework', props);
         render(props);
-        // storeTest(props);
+        storeTest(props);
     },
     update: function (props: QiankunProps): void | Promise<void> {
+        console.log('props', props);
         throw new Error('Function not implemented.');
     },
     unmount() {

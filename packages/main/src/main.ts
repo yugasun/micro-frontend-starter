@@ -25,10 +25,10 @@ window.__MICRO_APPS__ = apps;
 
 async function main() {
     // Start mock server
-    if (import.meta.env.DEV || import.meta.env.VITE_IS_VERCEL) {
-        const { worker } = await import('./mocks/index');
-        worker.start();
-    }
+    // if (import.meta.env.DEV || import.meta.env.VITE_IS_VERCEL) {
+    // }
+    const { worker } = await import('./mocks/index');
+    worker.start();
 
     const app = createApp(App);
 

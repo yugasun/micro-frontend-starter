@@ -12,5 +12,8 @@ max_line_length = 150
 [*.{json,yml}]
 indent_size = 2
 
+[*.{conf}]
+indent_size = 2
+
 [*.md]
 trim_trailing_whitespace = false

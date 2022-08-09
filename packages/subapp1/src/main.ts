@@ -20,7 +20,6 @@ interface MountProps {
 let app: App | null = null;
 function render(props: MountProps = {}) {
     const { container } = props;
-    console.log('subapp1 container', container);
 
     app = createApp(Root);
 
@@ -52,7 +51,6 @@ function storeTest(props: MountProps) {
         });
 }
 
-// some code
 renderWithQiankun({
     bootstrap() {
         console.log('[vue] vue app bootstraped');
@@ -60,9 +58,10 @@ renderWithQiankun({
     mount(props: MountProps) {
         console.log('[vue] props from main framework', props);
         render(props);
-        // storeTest(props);
+        storeTest(props);
     },
     update: function (props: QiankunProps): void | Promise<void> {
+        console.log('props', props);
         throw new Error('Function not implemented.');
     },
     unmount() {

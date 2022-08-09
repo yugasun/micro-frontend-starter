@@ -20,7 +20,9 @@
     "prettier": "prettier --write --ignore-unknown '**/*'",
     "commit": "git-cz",
     "release": "npx bumpp --push --tag --commit 'release: v'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "docker:build": "docker build --progress=plain -t micro-frontend-starter .",
+    "docker:up": "docker-compose up -d"
   },
   "keywords": [
     "micro-frontends",

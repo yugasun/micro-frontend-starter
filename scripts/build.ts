@@ -40,6 +40,9 @@ async function main() {
             // app not exist
         }
     } else {
+        // should build plugin for all build process
+        await build('plugin');
+
         const subApps = getSubApps(apps);
         subApps.forEach(async (item) => {
             await build(item);
