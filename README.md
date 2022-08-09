@@ -1,7 +1,12 @@
 # Micro Frontend Starter
 
-<a href="https://github.com/yugasun/micro-frontend-starter/actions/workflows/ci.yml"><img src="https://github.com/yugasun/micro-frontend-starter/actions/workflows/ci.yml/badge.svg?branch=main" alt="build status"></a>
-<br/>
+[![Qiankun](https://img.shields.io/badge/Framework-qiankun-6451ab)](https://qiankun.umijs.org/)
+[![Vite](https://img.shields.io/badge/Develop-Vite-747bff)](https://vitejs.dev)
+[![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue)](https://www.typescriptlang.org/)
+[![Vue3](https://img.shields.io/badge/Vue3-42b883)](https://vuejs.org/)
+[![Vue3](https://img.shields.io/badge/React-61dafb)](https://reactjs.org/)
+[![Vue3](https://img.shields.io/badge/Svelte-ff3e00)](https://svelte.dev/)
+[![Build](https://github.com/yugasun/micro-frontend-starter/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/yugasun/micro-frontend-starter/actions/workflows/ci.yml)
 
 ## Feature
 
