@@ -52,7 +52,7 @@ Now you can access by `http://localhost:8000`.
 Develop for single application:
 
 ```shell
-pnppm run dev --app main
+pnpm run dev --app main
 ```
 
 1. Build:
