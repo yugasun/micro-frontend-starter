@@ -39,8 +39,7 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "*.config.ts",
-    "micro.d.ts",
+    "*.config.ts"
   ],
   "references": [
     {
