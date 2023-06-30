@@ -11,13 +11,14 @@
     "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
+    "noEmitOnError": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "lib": [
       "esnext",
       "webworker",
-      "dom"
+      "dom",
     ],
     "skipLibCheck": true,
     "baseUrl": "./",
@@ -35,11 +36,11 @@
   },
   "include": [
     "src/*.d.ts",
+    "src/*.ts",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue",
-    "*.config.ts"
+    "src/**/*.vue"
   ],
   "references": [
     {

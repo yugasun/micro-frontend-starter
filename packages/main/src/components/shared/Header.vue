@@ -19,7 +19,6 @@ import ThemeSwitcher from '../ThemeSwitcher.vue';
             Vue3 + TypeScript + Vite Template
         </h3>
         <div class="nav-right flex flex-row justify-between items-center">
-            <LoginButton />
             <ThemeSwitcher class="switch-icon" />
         </div>
     </nav>

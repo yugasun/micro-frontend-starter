@@ -5,6 +5,11 @@ import Index from '../pages/index';
 import About from '../pages/about';
 
 export default function Router() {
+    console.log(
+        'qiankunWindow.__POWERED_BY_QIANKUN__',
+        qiankunWindow.__POWERED_BY_QIANKUN__,
+    );
+
     const baseUrl = qiankunWindow.__POWERED_BY_QIANKUN__ ? '/subapp2/' : '/';
     return (
         <StrictMode>

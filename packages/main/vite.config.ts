@@ -5,6 +5,7 @@ import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import * as path from 'path';
 import { createHtmlPlugin } from 'vite-plugin-html';
+import * as MicroConfig from './src/config';
 
 interface AppInterface {
     name: string;
@@ -21,7 +22,6 @@ interface MicroInterface {
 // initialize dev server proxy for sub applications
 const proxy: Record<string, any> = {};
 /* eslint-disable @typescript-eslint/no-var-requires */
-const MicroConfig = require('./micro.config.json');
 (MicroConfig as MicroInterface).apps.map((item) => {
     proxy[`^/${item.name}/`] = item.devEntry;
 });

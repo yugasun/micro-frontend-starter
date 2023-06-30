@@ -20,6 +20,6 @@
   "license": "MIT",
   "dependencies": {
     "cheerio": "1.0.0-rc.12",
-    "node-html-parser": "^5.3.3"
+    "node-html-parser": "^5.4.2"
   }
 }

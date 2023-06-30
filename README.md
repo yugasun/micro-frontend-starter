@@ -24,6 +24,7 @@ Application list:
 -   **packages/plugin**: Plugin for vite to use qiankun
 -   **packages/main**: The main application using Vue.js
 -   **packages/subapp1**: The child application using Vue.js
+-   **packages/subapp1_1**: The child application using Vue.js
 -   **packages/subapp2**: The child application using React.js
 -   **packages/subapp3**: The child application using Svelte.js
 

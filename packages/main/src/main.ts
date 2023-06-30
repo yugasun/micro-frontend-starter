@@ -7,7 +7,7 @@ import {
     start,
 } from 'qiankun';
 
-import { apps } from '../micro.config.json';
+import { apps } from './config';
 
 import App from './App.vue';
 import store from './store';
@@ -18,18 +18,12 @@ import '@/assets/styles/index.scss';
 // If you want to use ElMessage, import it.
 import 'element-plus/theme-chalk/src/message.scss';
 
-const isDev = process.env.NODE_ENV === 'development';
+const isDev = import.meta.env.NODE_ENV === 'development';
 
 window.__MICRO_APP__NAME__ = 'main';
 window.__MICRO_APPS__ = apps;
 
 async function main() {
-    // Start mock server
-    // if (import.meta.env.DEV || import.meta.env.VITE_IS_VERCEL) {
-    // }
-    const { worker } = await import('./mocks/index');
-    worker.start();
-
     const app = createApp(App);
 
     // 挂载插件
@@ -95,7 +89,7 @@ function initMicroApps() {
         },
     });
 
-    start({ sandbox: { experimentalStyleIsolation: true } });
+    start({ sandbox: { experimentalStyleIsolation: true }, singular: true });
 
     runAfterFirstMounted(() => {
         console.log('[MainApp] first app mounted');

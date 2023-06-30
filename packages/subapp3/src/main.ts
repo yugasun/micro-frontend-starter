@@ -17,8 +17,8 @@ function render(props: MountProps = {}) {
     const { container } = props;
 
     const target: HTMLElement = container
-        ? container.querySelector('#app')
-        : document.querySelector('#app');
+        ? container.querySelector('#subapp3')
+        : document.querySelector('#subapp3');
 
     app = new App({
         target,
@@ -50,10 +50,10 @@ function storeTest(props: MountProps) {
 // some code
 renderWithQiankun({
     bootstrap() {
-        console.log('[react] react app bootstraped');
+        console.log('[subapp3] react app bootstraped');
     },
     mount(props: MountProps) {
-        console.log('[react] props from main framework', props);
+        console.log('[subapp3] props from main framework', props);
         render(props);
         storeTest(props);
     },

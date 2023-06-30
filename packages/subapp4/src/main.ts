@@ -25,9 +25,11 @@ function render(props: MountProps = {}) {
 
     app.use(router);
 
+    // if you want to load with other sub applications, you can make selector id different
     const target: HTMLElement = container
-        ? container.querySelector('#subapp1')
-        : document.querySelector('#subapp1');
+        ? container.querySelector('#subapp4')
+        : document.querySelector('#subapp4');
+
     app.mount(target);
 }
 
@@ -53,11 +55,13 @@ function storeTest(props: MountProps) {
 
 renderWithQiankun({
     bootstrap() {
-        console.log('[subapp1] vue app bootstraped');
+        console.log('[subapp4] vue app bootstraped');
     },
     mount(props: MountProps) {
-        console.log('[subapp1] props from main framework', props);
-        render(props);
+        console.log('[subapp4] props from main framework', props);
+        requestIdleCallback(() => {
+            render(props);
+        });
         storeTest(props);
     },
     update: function (props: QiankunProps): void | Promise<void> {

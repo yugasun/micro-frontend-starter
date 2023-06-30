@@ -22,12 +22,16 @@ function copyDist(dir: string, dest: string) {
 }
 
 async function build(appName: string) {
-    step(`[${appName}] Building`);
-    const runArgs = ['run', 'build'];
-    const cwd = join(rootDir, appName);
-    await runCommand('pnpm', runArgs, join(rootDir, appName));
-    // copy dist to deploy dist dir
-    copyDist(`${cwd}/dist`, `${deployDist}/${appName}`);
+    try {
+        step(`[${appName}] Building`);
+        const runArgs = ['run', 'build'];
+        const cwd = join(rootDir, appName);
+        await runCommand('pnpm', runArgs, join(rootDir, appName));
+        // copy dist to deploy dist dir
+        copyDist(`${cwd}/dist`, `${deployDist}/${appName}`);
+    } catch (e) {
+        throw e;
+    }
 }
 
 async function main() {

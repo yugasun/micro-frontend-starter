@@ -22,6 +22,7 @@ const isMainApp = ref(window.__MICRO_APP__NAME__ || false);
                 <el-main class="main">
                     <RouterView v-if="isMainApp" />
                     <div id="subapp-container"></div>
+                    <div id="subapp-container1"></div>
                 </el-main>
                 <el-footer>
                     <Footer />
