@@ -68,9 +68,6 @@ pnpm run build --app main
 5. Start by docker:
 
 ```shell
-# build image
-pnpm run docker:build
-
 # start
 pnpm run docker:up
 ```

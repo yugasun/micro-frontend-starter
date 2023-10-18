@@ -1,8 +1,10 @@
 version: '3.8'
 
 services:
-    nginx:
-        image: micro-frontend-starter:latest
+    micro-fe:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
         container_name: micro-frontend-starter
         restart: always
         ports:

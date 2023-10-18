@@ -26,7 +26,7 @@ async function build(appName: string) {
         step(`[${appName}] Building`);
         const runArgs = ['run', 'build'];
         const cwd = join(rootDir, appName);
-        await runCommand('pnpm', runArgs, join(rootDir, appName));
+        await runCommand('pnpm', runArgs, cwd);
         // copy dist to deploy dist dir
         copyDist(`${cwd}/dist`, `${deployDist}/${appName}`);
     } catch (e) {
