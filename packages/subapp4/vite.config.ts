@@ -5,9 +5,9 @@ import MicroVitePlugin from '@micro-fe/vite-plugin';
 
 // TODO: change to real deploy domain
 const DEPLOY_URL = 'http://localhost:8004';
-const VITE_APP_NAME = 'subapp1';
+const VITE_APP_NAME = 'subapp4';
 const DEV_HOST = 'localhost';
-const DEV_PORT = 8001;
+const DEV_PORT = 8004;
 const isProd = process.env.NODE_ENV === 'production';
 const isMicro = process.env.VITE_MICRO_MODE === 'true';
 
