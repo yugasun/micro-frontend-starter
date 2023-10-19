@@ -6,6 +6,28 @@ Inspired by [vite-plugin-qiankun](https://github.com/tengmaoqing/vite-plugin-qia
 
 1. Install plugin for vite config file `vite.config.ts`:
 
+For main application:
+
+```typescript
+import MicroVitePlugin from '@ygkit/vite-plugin-qiankun';
+
+// https://vitejs.dev/config/
+export default defineConfig({
+    plugins: [
+        MicroVitePlugin('main', {
+            // set to true for main/master app
+            isMain: true,
+        }),
+    ],
+});
+```
+
+> Note: `isMain` is required for main application,
+
+And we should inject `window.__MICRO_APPS__` in main application, refer to [../main/src/main.ts](../main/src/main.ts).
+
+For sub application:
+
 ```typescript
 import MicroVitePlugin from '@ygkit/vite-plugin-qiankun';
 
@@ -19,7 +41,7 @@ export default defineConfig({
 });
 ```
 
-2. Use lifecycle in entry file `src/main.ts`:
+1. Use lifecycle in entry file `src/main.ts`:
 
 ```typescript
 import {
