@@ -8,7 +8,7 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@micro-fe/vite-plugin": "workspace:^0.0.1",
+    "@ygkit/vite-plugin-qiankun": "workspace:^0.0.1",
     "@sveltejs/vite-plugin-svelte": "^1.4.0",
     "@tsconfig/svelte": "^3.0.0",
     "svelte": "^3.59.2",

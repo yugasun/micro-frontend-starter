@@ -12,7 +12,7 @@
     "react-router-dom": "^6.14.0"
   },
   "devDependencies": {
-    "@micro-fe/vite-plugin": "workspace:0.0.1",
+    "@ygkit/vite-plugin-qiankun": "workspace:0.0.1",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@vitejs/plugin-react": "^2.2.0",

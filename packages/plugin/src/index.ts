@@ -3,6 +3,25 @@ import type { PluginOption } from 'vite';
 
 export * from './helper';
 
+export const createMainAppInjectStr = () => `
+;(global => {
+    global.getMicroApp = (name) => {
+        if (!name) {
+            name = global.proxy.qiankunName;
+        }
+        const apps = global.__MICRO_APPS__ || [];
+        return apps.find(app => app.name === name);
+    };
+    global.__MICRO_PUBLIC_PATH__ = (path, name) => {
+        const app = getMicroApp(name);
+        console.log('[@micro-fe]', app)
+        const prefix = app.entry[app.entry.length - 1] !== '/' ? app.entry + '/' : app.entry;
+        const publicPath = app ? prefix + path : path;
+        return publicPath;
+    };
+})(window);
+`;
+
 const createQiankunHelper = (qiankunName: string) => `
   const createDeffer = (hookName) => {
     const d = new Promise((resolve, reject) => {
@@ -40,6 +59,7 @@ const createImportFinallyResolve = (qiankunName: string) => {
 
 export type MicroOption = {
     useDevMode?: boolean;
+    isMain?: boolean;
 };
 type PluginFn = (
     qiankunName: string,
@@ -49,6 +69,25 @@ type PluginFn = (
 const plugin: PluginFn = (qiankunName, microOption = {}) => {
     let isProduction: boolean;
     let base = '';
+
+    if (microOption.isMain) {
+        return {
+            name: '@ygkit/vite-plugin-qiankun',
+            configResolved(config) {
+                isProduction =
+                    config.command === 'build' || config.isProduction;
+                base = config.base;
+            },
+            transformIndexHtml(html: string) {
+                const $ = load(html);
+                $('body').append(
+                    `<script>${createMainAppInjectStr()}</script>`,
+                );
+                const output = $.html();
+                return output;
+            },
+        };
+    }
 
     // dynamic import module
     const module2DynamicImport = ($: CheerioAPI, scriptTag?: Element) => {
@@ -64,12 +103,47 @@ const plugin: PluginFn = (qiankunName, microOption = {}) => {
         }
         script$.removeAttr('src');
         script$.removeAttr('type');
-        script$.html(`import(${appendBase}'${moduleSrc}')`);
+        if (isProduction) {
+            script$.html(
+                `import(window.__MICRO_PUBLIC_PATH__('${moduleSrc}', '${qiankunName}'))`,
+            );
+        } else {
+            script$.html(`import(${appendBase}'${moduleSrc}')`);
+        }
         return script$;
     };
 
     return {
-        name: '@micro-fe/vite-plugin',
+        name: '@ygkit/vite-plugin-qiankun',
+        // add runtime public path
+        config(config) {
+            if (microOption.useDevMode && !isProduction) {
+                config.base = `/${qiankunName}/${base.replace(/^\//, '')}`;
+            }
+            config.experimental = {
+                renderBuiltUrl(
+                    filename: string,
+                    {
+                        hostType,
+                    }: {
+                        hostType: 'js' | 'css' | 'html';
+                    },
+                ) {
+                    if (hostType === 'js') {
+                        return {
+                            runtime: `window.__MICRO_PUBLIC_PATH__(${JSON.stringify(
+                                filename,
+                            )}, "${qiankunName}")`,
+                        };
+                    }
+
+                    return filename;
+                },
+            };
+
+            return config;
+        },
+
         configResolved(config) {
             isProduction = config.command === 'build' || config.isProduction;
             base = config.base;

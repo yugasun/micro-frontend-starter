@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^1.1.4",
+    "@ygkit/vite-plugin-qiankun": "workspace:0.0.1",
     "@vueuse/core": "^8.9.4",
     "@vueuse/integrations": "^8.9.4",
     "axios": "^0.27.2",

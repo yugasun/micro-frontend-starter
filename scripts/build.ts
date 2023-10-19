@@ -1,4 +1,3 @@
-import { readdirSync } from 'fs';
 import { join } from 'path';
 import fse from 'fs-extra';
 import { runCommand, step, args } from './utils';

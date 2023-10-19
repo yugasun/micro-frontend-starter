@@ -25,11 +25,14 @@ const appList = ref<IMicroApp[]>(window.__MICRO_APPS__ || []);
             </el-icon>
             <span>Home</span>
         </el-menu-item>
-        <el-menu-item v-for="item in appList" :key="item.name">
+        <el-menu-item
+            v-for="item in appList"
+            :key="item.name"
+            :index="item.activeRule"
+            :name="item.name"
+        >
             <el-icon><icon-menu /></el-icon>
-            <a :href="item.activeRule" rel="noopener noreferrer">{{
-                item.name
-            }}</a>
+            <span>{{ item.name }}</span>
         </el-menu-item>
     </el-menu>
 </template>

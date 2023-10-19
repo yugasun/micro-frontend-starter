@@ -5,6 +5,7 @@ import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import * as path from 'path';
 import { createHtmlPlugin } from 'vite-plugin-html';
+import MicroVitePlugin from '@ygkit/vite-plugin-qiankun';
 import * as MicroConfig from './src/config';
 
 interface AppInterface {
@@ -61,6 +62,10 @@ export default defineConfig({
         }),
         Components({
             resolvers: [ElementPlusResolver()],
+        }),
+        MicroVitePlugin('main', {
+            // set to true for main/master app
+            isMain: true,
         }),
     ],
     server: {

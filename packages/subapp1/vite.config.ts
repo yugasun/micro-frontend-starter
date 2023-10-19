@@ -1,21 +1,19 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import vue from '@vitejs/plugin-vue';
-import MicroVitePlugin from '@micro-fe/vite-plugin';
+import MicroVitePlugin from '@ygkit/vite-plugin-qiankun';
 
 // TODO: change to real deploy domain
 const DEPLOY_URL = 'http://localhost:8001';
-const VITE_APP_NAME = 'subapp1';
 const DEV_HOST = 'localhost';
 const DEV_PORT = 8001;
+const VITE_APP_NAME = 'subapp1';
 const isProd = process.env.NODE_ENV === 'production';
-const isMicro = process.env.VITE_MICRO_MODE === 'true';
+const isUseCdn = process.env.VITE_USE_CDN === 'true';
 
 let base = '/';
-if (isProd) {
+if (isProd && isUseCdn) {
     base = DEPLOY_URL;
-} else if (isMicro) {
-    base = `/${VITE_APP_NAME}/`;
 }
 
 // https://vitejs.dev/config/

@@ -1,6 +1,6 @@
 import React, { StrictMode } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { qiankunWindow } from '@micro-fe/vite-plugin';
+import { qiankunWindow } from '@ygkit/vite-plugin-qiankun';
 import Index from '../pages/index';
 import About from '../pages/about';
 

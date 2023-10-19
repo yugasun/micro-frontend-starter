@@ -5,7 +5,7 @@ import {
     renderWithQiankun,
     qiankunWindow,
     QiankunProps,
-} from '@micro-fe/vite-plugin';
+} from '@ygkit/vite-plugin-qiankun';
 
 import Router from './router';
 import './index.css';

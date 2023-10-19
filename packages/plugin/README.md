@@ -1,4 +1,4 @@
-# @micro-fe/vite-plugin
+# @ygkit/vite-plugin-qiankun
 
 Inspired by [vite-plugin-qiankun](https://github.com/tengmaoqing/vite-plugin-qiankun).
 
@@ -7,7 +7,7 @@ Inspired by [vite-plugin-qiankun](https://github.com/tengmaoqing/vite-plugin-qia
 1. Install plugin for vite config file `vite.config.ts`:
 
 ```typescript
-import MicroVitePlugin from '@micro-fe/vite-plugin';
+import MicroVitePlugin from '@ygkit/vite-plugin-qiankun';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -26,7 +26,7 @@ import {
     renderWithQiankun,
     qiankunWindow,
     QiankunProps,
-} from '@micro-fe/vite-plugin';
+} from '@ygkit/vite-plugin-qiankun';
 
 renderWithQiankun({
     bootstrap() {

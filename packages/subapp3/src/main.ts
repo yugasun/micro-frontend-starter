@@ -1,5 +1,5 @@
-import { renderWithQiankun, qiankunWindow } from '@micro-fe/vite-plugin';
-import type { QiankunProps } from '@micro-fe/vite-plugin';
+import { renderWithQiankun, qiankunWindow } from '@ygkit/vite-plugin-qiankun';
+import type { QiankunProps } from '@ygkit/vite-plugin-qiankun';
 import type { SvelteComponent } from 'svelte';
 
 import './app.css';

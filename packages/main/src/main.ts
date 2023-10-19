@@ -79,13 +79,13 @@ function initMicroApps() {
     });
 
     onGlobalStateChange((value, prev) =>
-        console.log('[onGlobalStateChange - master]:', value, prev),
+        console.log('[onGlobalStateChange - main]:', value, prev),
     );
 
     setGlobalState({
-        ignore: 'master',
+        ignore: 'main',
         user: {
-            name: 'master',
+            name: 'main',
         },
     });
 

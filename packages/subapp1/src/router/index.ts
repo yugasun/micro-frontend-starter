@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import { qiankunWindow } from '@micro-fe/vite-plugin';
+import { qiankunWindow } from '@ygkit/vite-plugin-qiankun';
 
 const routes: Array<RouteRecordRaw> = [
     {

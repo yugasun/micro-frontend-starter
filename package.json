@@ -22,7 +22,9 @@
     "release": "npx bumpp --push --tag --commit 'release: v'",
     "prepare": "husky install",
     "docker:build": "docker build --progress=plain -t micro-frontend-starter .",
-    "docker:up": "docker-compose up -d"
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:dev": "docker-compose -f docker-compose.dev.yml up"
   },
   "keywords": [
     "micro-frontends",

@@ -1,5 +1,5 @@
 {
-  "name": "@micro-fe/vite-plugin",
+  "name": "@ygkit/vite-plugin-qiankun",
   "version": "0.0.1",
   "description": "Qiankun plugin for vite",
   "main": "dist/index.js",
@@ -20,6 +20,6 @@
   "license": "MIT",
   "dependencies": {
     "cheerio": "1.0.0-rc.12",
-    "node-html-parser": "^5.4.2"
+    "node-html-parser": "^6.1.10"
   }
 }

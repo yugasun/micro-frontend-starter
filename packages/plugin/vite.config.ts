@@ -19,7 +19,7 @@ export default defineConfig({
             entryRoot: resolve(__dirname, 'src'),
             cleanVueFileName: true,
             copyDtsFiles: false,
-            outputDir: resolve(__dirname, 'dist'),
+            outDir: resolve(__dirname, 'dist'),
         }),
     ],
 });

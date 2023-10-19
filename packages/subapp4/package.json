@@ -11,7 +11,7 @@
     "vue-router": "^4.2.2"
   },
   "devDependencies": {
-    "@micro-fe/vite-plugin": "workspace:0.0.1",
+    "@ygkit/vite-plugin-qiankun": "workspace:0.0.1",
     "@vitejs/plugin-vue": "^3.2.0",
     "typescript": "^4.9.5",
     "vite": "^3.2.7",
