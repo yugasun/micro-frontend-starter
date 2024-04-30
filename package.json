@@ -24,7 +24,8 @@
     "docker:build": "docker build --progress=plain -t micro-frontend-starter .",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
-    "docker:dev": "docker-compose -f docker-compose.dev.yml up"
+    "docker:dev": "docker-compose -f docker-compose.dev.yml up",
+    "postinstall": "pnpm run build:plugin"
   },
   "keywords": [
     "micro-frontends",
